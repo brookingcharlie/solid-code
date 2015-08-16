@@ -13,7 +13,7 @@ public class AppTest {
     @Test
     public void testSingle() throws Exception {
         String input =
-            "Pizza - Pepperoni,12.99";
+            "Pizza - Pepperoni,12.99\n";
         String expectedOutput =
             "*************** RECEIPT ****************\n" +
             "\n" +
