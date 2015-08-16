@@ -12,9 +12,9 @@ import org.junit.Test;
 public class AppTest {
     @Test
     public void testSingle() throws Exception {
-        String inString =
+        String input =
             "Pizza - Pepperoni,12.99";
-        String expectedOutString =
+        String expectedOutput =
             "*************** RECEIPT ****************\n" +
             "\n" +
             "Pizza - Pepperoni                  12.99\n" +
@@ -22,11 +22,11 @@ public class AppTest {
             "Total for 1 items                  12.99\n" +
             "                                ========\n";
         try (
-            StringReader reader = new StringReader(inString);
+            StringReader reader = new StringReader(input);
             StringWriter writer = new StringWriter();
         ) {
             App.run(reader, writer);
-            assertThat(writer.toString(), is(equalTo(expectedOutString)));
+            assertThat(writer.toString(), is(equalTo(expectedOutput)));
         }
     }
 }
