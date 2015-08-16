@@ -6,7 +6,7 @@ import java.io.Reader;
 import java.math.BigDecimal;
 
 public class BasketReader {
-    public void read(Basket basket, Reader input) throws IOException {
+    public void read(MutatableBasket basket, Reader input) throws IOException {
         try (
             BufferedReader bufferedReader = new BufferedReader(input);
         ) {

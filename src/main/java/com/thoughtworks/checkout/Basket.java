@@ -3,7 +3,7 @@ package com.thoughtworks.checkout;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class Basket {
+public class Basket implements MutatableBasket, AccessibleBasket {
     private final ArrayList<Item> items;
 
     public Basket() {
