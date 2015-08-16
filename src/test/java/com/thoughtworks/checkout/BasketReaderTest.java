@@ -34,8 +34,8 @@ public class BasketReaderTest {
 
         ArgumentCaptor<Item> item = ArgumentCaptor.forClass(Item.class);
         verify(basket, times(1)).addItem(item.capture());
-        assertThat(item.getAllValues().get(0).getProduct(), is(equalTo("Pizza - Pepperoni")));
-        assertThat(item.getAllValues().get(0).getPrice(), is(equalTo(new BigDecimal("12.99"))));
+        assertThat(item.getValue().getProduct(), is(equalTo("Pizza - Pepperoni")));
+        assertThat(item.getValue().getPrice(), is(equalTo(new BigDecimal("12.99"))));
     }
 
     @Test
