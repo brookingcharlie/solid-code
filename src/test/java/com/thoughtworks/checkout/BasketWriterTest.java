@@ -65,4 +65,22 @@ public class BasketWriterTest {
             "                                ========\n";
         assertThat(output.toString(), is(equalTo(expectedOutput)));
     }
+
+    @Test
+    public void testSingleItemOnSale() throws IOException {
+        Basket basket = new SaleBasket();
+        basket.addItem(new Item("Pizza - Pepperoni", new BigDecimal("10.00")));
+        StringWriter output = new StringWriter();
+        new BasketWriter().write(basket, output);
+
+        String expectedOutput =
+            "*************** RECEIPT ****************\n" +
+            "\n" +
+            "Pizza - Pepperoni                  10.00\n" +
+            "                                --------\n" +
+            "Total for 1 items                   9.00\n" +
+            "                                ========\n" +
+            "Includes discount of 10%\n";
+        assertThat(output.toString(), is(equalTo(expectedOutput)));
+    }
 }
