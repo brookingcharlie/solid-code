@@ -28,4 +28,8 @@ public class Basket implements MutatableBasket, AccessibleBasket {
             .reduce((a, b) -> a.add(b))
             .orElse(new BigDecimal("0.00"));
     }
+    
+    public String getMessage() {
+        return null;
+    }
 }

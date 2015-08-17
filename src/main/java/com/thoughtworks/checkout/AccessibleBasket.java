@@ -6,4 +6,5 @@ public interface AccessibleBasket {
     Item getItem(int i);
     int getCount();
     BigDecimal getTotal();
+    String getMessage();
 }

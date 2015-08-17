@@ -2,6 +2,7 @@ package com.thoughtworks.checkout;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ public class BasketTest {
         Basket basket = new Basket();
         assertThat(basket.getCount(), is(equalTo(0)));
         assertThat(basket.getTotal(), is(equalTo(new BigDecimal("0.00"))));
+        assertThat(basket.getMessage(), is(nullValue()));
     }
 
     @Test

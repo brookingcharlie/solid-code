@@ -16,8 +16,8 @@ public class BasketWriter {
             String totalDescription = String.format("Total for %d items", basket.getCount());
             printWriter.println(String.format("%-32s%8.2f", totalDescription, basket.getTotal()));
             printWriter.println(String.format("%-32s%8s", "", "========"));
-            if (basket instanceof SaleBasket) {
-                printWriter.println("Includes discount of 10%");
+            if (basket.getMessage() != null) {
+                printWriter.println(basket.getMessage());
             }
         }
     }
