@@ -10,18 +10,22 @@ public class Basket implements MutatableBasket, AccessibleBasket {
         this.items = new ArrayList<Item>();
     }
 
+    @Override
     public void addItem(Item item) {
         items.add(item);
     }
 
+    @Override
     public Item getItem(int i) {
         return items.get(i);
     }
 
+    @Override
     public int getCount() {
         return items.size();
     }
 
+    @Override
     public BigDecimal getTotal() {
         return items.stream()
             .map(i -> i.getPrice())
@@ -29,6 +33,7 @@ public class Basket implements MutatableBasket, AccessibleBasket {
             .orElse(new BigDecimal("0.00"));
     }
     
+    @Override
     public String getMessage() {
         return null;
     }
