@@ -14,7 +14,7 @@ public class DecimalTest {
     double result = 0.1 + 0.2;
     assertThat(result, is(equalTo(0.30000000000000004)));
   }
-  
+
   @Test
   public void testCorrectBigDecimal() {
     BigDecimal result = new BigDecimal("0.1").add(new BigDecimal("0.2"));
