@@ -25,7 +25,8 @@ public class AppTest {
       StringReader reader = new StringReader(input);
       StringWriter writer = new StringWriter();
     ) {
-      App.run(reader, writer);
+      App app = new App(new BasketReader(), new BasketWriter());
+      app.run(reader, writer);
       assertThat(writer.toString(), is(equalTo(expectedOutput)));
     }
   }
