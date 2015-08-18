@@ -77,6 +77,7 @@ public class BasketWriterTest {
       "*************** RECEIPT ****************\n" +
       "\n" +
       "Pizza - Pepperoni                  10.00\n" +
+      "Discount                           -1.00\n" +
       "                                --------\n" +
       "Total for 1 items                   9.00\n" +
       "                                ========\n" +

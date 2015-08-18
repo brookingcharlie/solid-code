@@ -2,6 +2,8 @@ package com.thoughtworks.checkout;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Basket implements MutatableBasket, AccessibleBasket {
   private final ArrayList<Item> items;
@@ -31,6 +33,11 @@ public class Basket implements MutatableBasket, AccessibleBasket {
       .map(i -> i.getPrice())
       .reduce((a, b) -> a.add(b))
       .orElse(new BigDecimal("0.00"));
+  }
+
+  @Override
+  public List<Item> getExtraItems() {
+    return Collections.emptyList();
   }
 
   @Override

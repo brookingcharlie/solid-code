@@ -12,6 +12,9 @@ public class BasketWriter {
       for (int i = 0; i < basket.getCount(); i++) {
         printWriter.println(String.format("%-32s%8.2f", basket.getItem(i).getProduct(), basket.getItem(i).getPrice()));
       }
+      for (Item item : basket.getExtraItems()) {
+        printWriter.println(String.format("%-32s%8.2f", item.getProduct(), item.getPrice()));
+      }
       printWriter.println(String.format("%-32s%8s", "", "--------"));
       String totalDescription = String.format("Total for %d items", basket.getCount());
       printWriter.println(String.format("%-32s%8.2f", totalDescription, basket.getTotal()));
