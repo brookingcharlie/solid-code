@@ -4,9 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface AccessibleBasket {
-  Item getItem(int i);
-  int getCount();
+  List<Item> getItems();
   BigDecimal getTotal();
-  List<Item> getExtraItems();
   String getMessage();
 }

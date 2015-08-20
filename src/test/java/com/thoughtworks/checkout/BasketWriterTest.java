@@ -21,7 +21,7 @@ public class BasketWriterTest {
       "*************** RECEIPT ****************\n" +
       "\n" +
       "                                --------\n" +
-      "Total for 0 items                   0.00\n" +
+      "Total                               0.00\n" +
       "                                ========\n";
     assertThat(output.toString(), is(equalTo(expectedOutput)));
   }
@@ -38,7 +38,7 @@ public class BasketWriterTest {
       "\n" +
       "Pizza - Pepperoni                  12.99\n" +
       "                                --------\n" +
-      "Total for 1 items                  12.99\n" +
+      "Total                              12.99\n" +
       "                                ========\n";
     assertThat(output.toString(), is(equalTo(expectedOutput)));
   }
@@ -61,7 +61,7 @@ public class BasketWriterTest {
       "Garlic bread                        8.50\n" +
       "Chianti                            21.00\n" +
       "                                --------\n" +
-      "Total for 4 items                  55.48\n" +
+      "Total                              55.48\n" +
       "                                ========\n";
     assertThat(output.toString(), is(equalTo(expectedOutput)));
   }
@@ -79,7 +79,7 @@ public class BasketWriterTest {
       "Pizza - Pepperoni                  10.00\n" +
       "Discount                           -1.00\n" +
       "                                --------\n" +
-      "Total for 1 items                   9.00\n" +
+      "Total                               9.00\n" +
       "                                ========\n" +
       "Includes discount of 10%\n";
     assertThat(output.toString(), is(equalTo(expectedOutput)));

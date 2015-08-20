@@ -19,7 +19,7 @@ public class AppTest {
       "\n" +
       "Pizza - Pepperoni                  12.99\n" +
       "                                --------\n" +
-      "Total for 1 items                  12.99\n" +
+      "Total                              12.99\n" +
       "                                ========\n";
     try (
       StringReader reader = new StringReader(input);

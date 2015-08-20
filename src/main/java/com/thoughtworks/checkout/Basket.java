@@ -18,13 +18,14 @@ public class Basket implements MutatableBasket, AccessibleBasket {
   }
 
   @Override
-  public Item getItem(int i) {
-    return items.get(i);
+  public final List<Item> getItems() {
+    List<Item> result = new ArrayList<Item>(items);
+    result.addAll(getExtraItems());
+    return result;
   }
 
-  @Override
-  public int getCount() {
-    return items.size();
+  protected List<Item> getExtraItems() {
+    return Collections.emptyList();
   }
 
   @Override
@@ -33,11 +34,6 @@ public class Basket implements MutatableBasket, AccessibleBasket {
       .map(i -> i.getPrice())
       .reduce((a, b) -> a.add(b))
       .orElse(new BigDecimal("0.00"));
-  }
-
-  @Override
-  public List<Item> getExtraItems() {
-    return Collections.emptyList();
   }
 
   @Override
