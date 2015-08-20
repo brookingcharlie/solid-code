@@ -6,6 +6,7 @@ import static org.junit.Assert.assertThat;
 
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.time.LocalDate;
 
 import org.junit.Test;
 
@@ -25,7 +26,8 @@ public class AppTest {
       StringReader reader = new StringReader(input);
       StringWriter writer = new StringWriter();
     ) {
-      App app = new App(new BasketReader(), new BasketWriter());
+      WeekendSaleBasketFactory basketFactory = new WeekendSaleBasketFactory(LocalDate.of(2015, 8, 20));
+      App app = new App(basketFactory, new BasketReader(), new BasketWriter());
       app.run(reader, writer);
       assertThat(writer.toString(), is(equalTo(expectedOutput)));
     }
