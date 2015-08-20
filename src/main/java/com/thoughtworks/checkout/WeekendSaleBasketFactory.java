@@ -14,7 +14,7 @@ public class WeekendSaleBasketFactory implements BasketFactory {
 
   @Override
   public Basket createBasket() {
-    if (date.getDayOfWeek().equals(SATURDAY) || date.getDayOfWeek().equals(SUNDAY)) {
+    if (date.getDayOfWeek() == SATURDAY || date.getDayOfWeek() == SUNDAY) {
       return new SaleBasket();
     }
     else {

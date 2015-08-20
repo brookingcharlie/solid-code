@@ -10,7 +10,7 @@ public class WeekendSaleBasketFactoryUsingNow implements BasketFactory {
   @Override
   public Basket createBasket() {
     LocalDate date = LocalDate.now();
-    if (date.getDayOfWeek().equals(SATURDAY) || date.getDayOfWeek().equals(SUNDAY)) {
+    if (date.getDayOfWeek() == SATURDAY || date.getDayOfWeek() == SUNDAY) {
       return new SaleBasket();
     }
     else {
