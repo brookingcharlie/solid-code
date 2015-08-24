@@ -3,6 +3,8 @@ package com.thoughtworks.checkout;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -37,7 +39,9 @@ public class WeekendSaleBasketFactoryTest {
 
   @Test
   public void test() {
-    WeekendSaleBasketFactory factory = new WeekendSaleBasketFactory(date);
+    DateSource dateSource = mock(DateSource.class);
+    when(dateSource.get()).thenReturn(date);
+    WeekendSaleBasketFactory factory = new WeekendSaleBasketFactory(dateSource);
     assertThat(factory.createBasket(), is(instanceOf(basketClass)));
   }
 }

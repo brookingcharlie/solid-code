@@ -3,6 +3,8 @@ package com.thoughtworks.checkout;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -26,7 +28,9 @@ public class AppTest {
       StringReader reader = new StringReader(input);
       StringWriter writer = new StringWriter();
     ) {
-      WeekendSaleBasketFactory basketFactory = new WeekendSaleBasketFactory(LocalDate.of(2015, 8, 20));
+      DateSource dateSource = mock(DateSource.class);
+      when(dateSource.get()).thenReturn(LocalDate.of(2015, 8, 20));
+      WeekendSaleBasketFactory basketFactory = new WeekendSaleBasketFactory(dateSource);
       App app = new App(basketFactory, new ItemsReader(), new ReceiptWriter());
       app.run(reader, writer);
       assertThat(writer.toString(), is(equalTo(expectedOutput)));

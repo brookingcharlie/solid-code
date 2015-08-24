@@ -6,14 +6,15 @@ import static java.time.DayOfWeek.SUNDAY;
 import java.time.LocalDate;
 
 public class WeekendSaleBasketFactory implements BasketFactory {
-  private LocalDate date;
+  private DateSource dateSource;
 
-  public WeekendSaleBasketFactory(LocalDate date) {
-    this.date = date;
+  public WeekendSaleBasketFactory(DateSource dateSource) {
+    this.dateSource = dateSource;
   }
 
   @Override
   public Basket createBasket() {
+    LocalDate date = dateSource.get();
     if (date.getDayOfWeek() == SATURDAY || date.getDayOfWeek() == SUNDAY) {
       return new SaleBasket();
     }
