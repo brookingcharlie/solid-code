@@ -12,6 +12,6 @@ public class BasketUsingDoubleTest {
     BasketUsingDouble basket = new BasketUsingDouble();
     basket.addItem(new ItemUsingDouble("Pizza", 0.10));
     basket.addItem(new ItemUsingDouble("Coke", 0.20));
-    assertThat(basket.getTotal(), is(equalTo(0.30)));
+    assertThat(basket.getTotal(), is(equalTo(0.30000000000000004)));
   }
 }
