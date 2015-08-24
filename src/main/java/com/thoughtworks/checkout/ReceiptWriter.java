@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 
-public class BasketWriter {
+public class ReceiptWriter {
   public void write(AccessibleBasket basket, Writer output) throws IOException {
     try (PrintWriter printWriter = new PrintWriter(output)) {
       printWriter.println("*************** RECEIPT ****************");

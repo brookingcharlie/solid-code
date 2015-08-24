@@ -7,9 +7,9 @@ import java.io.Writer;
 public class App {
   private final BasketFactory basketFactory;
   private final ItemsReader inputReader;
-  private final BasketWriter outputWriter;
+  private final ReceiptWriter outputWriter;
 
-  public App(BasketFactory basketFactory, ItemsReader inputReader, BasketWriter outputWriter) {
+  public App(BasketFactory basketFactory, ItemsReader inputReader, ReceiptWriter outputWriter) {
     this.basketFactory = basketFactory;
     this.inputReader = inputReader;
     this.outputWriter = outputWriter;

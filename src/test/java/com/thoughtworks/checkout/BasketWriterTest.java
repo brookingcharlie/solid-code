@@ -15,7 +15,7 @@ public class BasketWriterTest {
   public void testZeroItems() throws IOException {
     Basket basket = new Basket();
     StringWriter output = new StringWriter();
-    new BasketWriter().write(basket, output);
+    new ReceiptWriter().write(basket, output);
 
     String expectedOutput =
       "*************** RECEIPT ****************\n" +
@@ -31,7 +31,7 @@ public class BasketWriterTest {
     Basket basket = new Basket();
     basket.addItem(new Item("Pizza - Pepperoni", new BigDecimal("12.99")));
     StringWriter output = new StringWriter();
-    new BasketWriter().write(basket, output);
+    new ReceiptWriter().write(basket, output);
 
     String expectedOutput =
       "*************** RECEIPT ****************\n" +
@@ -51,7 +51,7 @@ public class BasketWriterTest {
     basket.addItem(new Item("Garlic bread", new BigDecimal("8.50")));
     basket.addItem(new Item("Chianti", new BigDecimal("21.00")));
     StringWriter output = new StringWriter();
-    new BasketWriter().write(basket, output);
+    new ReceiptWriter().write(basket, output);
 
     String expectedOutput =
       "*************** RECEIPT ****************\n" +
@@ -71,7 +71,7 @@ public class BasketWriterTest {
     Basket basket = new SaleBasket();
     basket.addItem(new Item("Pizza - Pepperoni", new BigDecimal("10.00")));
     StringWriter output = new StringWriter();
-    new BasketWriter().write(basket, output);
+    new ReceiptWriter().write(basket, output);
 
     String expectedOutput =
       "*************** RECEIPT ****************\n" +
