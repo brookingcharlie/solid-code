@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 
-public class BasketReaderTest {
+public class ItemsReaderTest {
   @Test
   public void testZeroItems() throws IOException {
     Basket basket = mock(Basket.class);

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 import org.junit.Test;
 
-public class BasketWriterTest {
+public class ReceiptWriterTest {
   @Test
   public void testZeroItems() throws IOException {
     Basket basket = new Basket();
