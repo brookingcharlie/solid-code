@@ -6,10 +6,10 @@ import java.io.Writer;
 
 public class App {
   private final BasketFactory basketFactory;
-  private final BasketReader inputReader;
+  private final ItemsReader inputReader;
   private final BasketWriter outputWriter;
 
-  public App(BasketFactory basketFactory, BasketReader inputReader, BasketWriter outputWriter) {
+  public App(BasketFactory basketFactory, ItemsReader inputReader, BasketWriter outputWriter) {
     this.basketFactory = basketFactory;
     this.inputReader = inputReader;
     this.outputWriter = outputWriter;

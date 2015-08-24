@@ -20,7 +20,7 @@ public class BasketReaderTest {
   public void testZeroItems() throws IOException {
     Basket basket = mock(Basket.class);
     StringReader input = new StringReader("");
-    new BasketReader().read(basket, input);
+    new ItemsReader().read(basket, input);
 
     ArgumentCaptor<Item> item = ArgumentCaptor.forClass(Item.class);
     verify(basket, never()).addItem(item.capture());
@@ -30,7 +30,7 @@ public class BasketReaderTest {
   public void testSingleItem() throws IOException {
     Basket basket = mock(Basket.class);
     StringReader input = new StringReader("Pizza - Pepperoni,12.99\n");
-    new BasketReader().read(basket, input);
+    new ItemsReader().read(basket, input);
 
     ArgumentCaptor<Item> item = ArgumentCaptor.forClass(Item.class);
     verify(basket, times(1)).addItem(item.capture());
@@ -47,7 +47,7 @@ public class BasketReaderTest {
       "Garlic bread,8.50\n" +
       "Chianti,21.00\n"
     );
-    new BasketReader().read(basket, input);
+    new ItemsReader().read(basket, input);
 
     ArgumentCaptor<Item> item = ArgumentCaptor.forClass(Item.class);
     verify(basket, times(4)).addItem(item.capture());

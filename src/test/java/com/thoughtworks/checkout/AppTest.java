@@ -27,7 +27,7 @@ public class AppTest {
       StringWriter writer = new StringWriter();
     ) {
       WeekendSaleBasketFactory basketFactory = new WeekendSaleBasketFactory(LocalDate.of(2015, 8, 20));
-      App app = new App(basketFactory, new BasketReader(), new BasketWriter());
+      App app = new App(basketFactory, new ItemsReader(), new BasketWriter());
       app.run(reader, writer);
       assertThat(writer.toString(), is(equalTo(expectedOutput)));
     }

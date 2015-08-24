@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.math.BigDecimal;
 
-public class BasketReader {
+public class ItemsReader {
   public void read(MutatableBasket basket, Reader input) throws IOException {
     try (
       BufferedReader bufferedReader = new BufferedReader(input);
