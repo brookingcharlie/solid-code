@@ -24,13 +24,13 @@ public class WeekendSaleBasketFactoryTest {
 
   public static Stream<Arguments> getTestArguments() {
     return Stream.of(
-            arguments(LocalDate.of(2015, 8, 17), Basket.class),
-            arguments(LocalDate.of(2015, 8, 18), Basket.class),
-            arguments(LocalDate.of(2015, 8, 19), Basket.class),
-            arguments(LocalDate.of(2015, 8, 20), Basket.class),
-            arguments(LocalDate.of(2015, 8, 21), Basket.class),
-            arguments(LocalDate.of(2015, 8, 22), SaleBasket.class),
-            arguments(LocalDate.of(2015, 8, 23), SaleBasket.class)
+      arguments(LocalDate.of(2015, 8, 17), Basket.class),
+      arguments(LocalDate.of(2015, 8, 18), Basket.class),
+      arguments(LocalDate.of(2015, 8, 19), Basket.class),
+      arguments(LocalDate.of(2015, 8, 20), Basket.class),
+      arguments(LocalDate.of(2015, 8, 21), Basket.class),
+      arguments(LocalDate.of(2015, 8, 22), SaleBasket.class),
+      arguments(LocalDate.of(2015, 8, 23), SaleBasket.class)
     );
   }
 }
