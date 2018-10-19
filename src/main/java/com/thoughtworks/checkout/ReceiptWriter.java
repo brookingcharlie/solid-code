@@ -12,10 +12,9 @@ public class ReceiptWriter {
       for (Item item : basket.getItems()) {
         printWriter.println(String.format("%-32s%8.2f", item.getProduct(), item.getPrice()));
       }
-      printWriter.println(String.format("%-32s%8s", "", "--------"));
-      String totalDescription = String.format("Total", basket.getItems().size());
-      printWriter.println(String.format("%-32s%8.2f", totalDescription, basket.getTotal()));
-      printWriter.println(String.format("%-32s%8s", "", "========"));
+      printWriter.println(String.format("%-32s%s", "", "--------"));
+      printWriter.println(String.format("%-32s%8.2f", "Total", basket.getTotal()));
+      printWriter.println(String.format("%-32s%s", "", "========"));
       if (basket.getMessage() != null) {
         printWriter.println(basket.getMessage());
       }
