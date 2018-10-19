@@ -1,10 +1,8 @@
 package com.thoughtworks.checkout;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BasketUsingDoubleTest {
   @Test
@@ -12,6 +10,6 @@ public class BasketUsingDoubleTest {
     BasketUsingDouble basket = new BasketUsingDouble();
     basket.addItem(new ItemUsingDouble("Pizza", 0.10));
     basket.addItem(new ItemUsingDouble("Coke", 0.20));
-    assertThat(basket.getTotal(), is(equalTo(0.30000000000000004)));
+    assertThat(basket.getTotal()).isEqualTo(0.30000000000000004);
   }
 }

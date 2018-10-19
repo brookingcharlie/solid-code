@@ -1,8 +1,6 @@
 package com.thoughtworks.checkout;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -10,7 +8,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.time.LocalDate;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class AppTest {
   @Test
@@ -33,7 +31,7 @@ public class AppTest {
       WeekendSaleBasketFactory basketFactory = new WeekendSaleBasketFactory(dateSource);
       App app = new App(basketFactory, new ItemsReader(), new ReceiptWriter());
       app.run(reader, writer);
-      assertThat(writer.toString(), is(equalTo(expectedOutput)));
+      assertThat(writer.toString()).isEqualTo(expectedOutput);
     }
   }
 }

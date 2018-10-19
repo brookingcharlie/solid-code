@@ -1,14 +1,12 @@
 package com.thoughtworks.checkout;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
 import java.io.StringWriter;
 import java.math.BigDecimal;
-
-import org.junit.Test;
 
 public class ReceiptWriterTest {
   @Test
@@ -23,7 +21,7 @@ public class ReceiptWriterTest {
       "                                --------\n" +
       "Total                               0.00\n" +
       "                                ========\n";
-    assertThat(output.toString(), is(equalTo(expectedOutput)));
+    assertThat(output.toString()).isEqualTo(expectedOutput);
   }
 
   @Test
@@ -40,7 +38,7 @@ public class ReceiptWriterTest {
       "                                --------\n" +
       "Total                              12.99\n" +
       "                                ========\n";
-    assertThat(output.toString(), is(equalTo(expectedOutput)));
+    assertThat(output.toString()).isEqualTo(expectedOutput);
   }
 
   @Test
@@ -63,7 +61,7 @@ public class ReceiptWriterTest {
       "                                --------\n" +
       "Total                              55.48\n" +
       "                                ========\n";
-    assertThat(output.toString(), is(equalTo(expectedOutput)));
+    assertThat(output.toString()).isEqualTo(expectedOutput);
   }
 
   @Test
@@ -82,6 +80,6 @@ public class ReceiptWriterTest {
       "Total                               9.00\n" +
       "                                ========\n" +
       "Includes discount of 10%\n";
-    assertThat(output.toString(), is(equalTo(expectedOutput)));
+    assertThat(output.toString()).isEqualTo(expectedOutput);
   }
 }

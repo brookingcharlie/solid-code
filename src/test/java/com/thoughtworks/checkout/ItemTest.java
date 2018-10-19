@@ -1,18 +1,16 @@
 package com.thoughtworks.checkout;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ItemTest {
     @Test
     public void test() {
         Item item = new Item("Pizza - Pepperoni", new BigDecimal("12.99"));
-        assertThat(item.getProduct(), is(equalTo("Pizza - Pepperoni")));
-        assertThat(item.getPrice(), is(equalTo(new BigDecimal("12.99"))));
+        assertThat(item.getProduct()).isEqualTo("Pizza - Pepperoni");
+        assertThat(item.getPrice()).isEqualTo(new BigDecimal("12.99"));
     }
 }

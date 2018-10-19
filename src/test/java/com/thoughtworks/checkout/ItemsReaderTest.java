@@ -1,8 +1,6 @@
 package com.thoughtworks.checkout;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
@@ -12,7 +10,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.math.BigDecimal;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 
 public class ItemsReaderTest {
@@ -34,8 +32,8 @@ public class ItemsReaderTest {
 
     ArgumentCaptor<Item> item = ArgumentCaptor.forClass(Item.class);
     verify(basket, times(1)).addItem(item.capture());
-    assertThat(item.getValue().getProduct(), is(equalTo("Pizza - Pepperoni")));
-    assertThat(item.getValue().getPrice(), is(equalTo(new BigDecimal("12.99"))));
+    assertThat(item.getValue().getProduct()).isEqualTo("Pizza - Pepperoni");
+    assertThat(item.getValue().getPrice()).isEqualTo(new BigDecimal("12.99"));
   }
 
   @Test
@@ -51,9 +49,9 @@ public class ItemsReaderTest {
 
     ArgumentCaptor<Item> item = ArgumentCaptor.forClass(Item.class);
     verify(basket, times(4)).addItem(item.capture());
-    assertThat(item.getAllValues().get(0).getProduct(), is(equalTo("Pizza - Pepperoni")));
-    assertThat(item.getAllValues().get(2).getPrice(), is(equalTo(new BigDecimal("8.50"))));
-    assertThat(item.getAllValues().get(3).getProduct(), is(equalTo("Chianti")));
-    assertThat(item.getAllValues().get(3).getPrice(), is(equalTo(new BigDecimal("21.00"))));
+    assertThat(item.getAllValues().get(0).getProduct()).isEqualTo("Pizza - Pepperoni");
+    assertThat(item.getAllValues().get(2).getPrice()).isEqualTo(new BigDecimal("8.50"));
+    assertThat(item.getAllValues().get(3).getProduct()).isEqualTo("Chianti");
+    assertThat(item.getAllValues().get(3).getPrice()).isEqualTo(new BigDecimal("21.00"));
   }
 }
